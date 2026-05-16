@@ -1,23 +1,70 @@
-🎮 Connect-4 — CMPS 241 Systems Programming Project
+# Connect-4 — CMPS 241 Systems Programming
 
-📖 Overview
+<p align="left">
+  <img src="https://img.shields.io/badge/Language-C11-A8B9CC?style=for-the-badge&logo=c&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Platform-Linux%20%7C%20macOS-lightgrey?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Course-CMPS%20241%20AUB-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Build-Make-orange?style=for-the-badge"/>
+</p>
 
-This repository contains our implementation of the classic Connect-4 game, developed as part of CMPS 241 (Systems Programming) at AUB.
-The project is written in C and designed to run in the terminal using a clean, console-based interface.
+A terminal-based **Connect-4** game written in C, built as a team project for **CMPS 241 – Systems Programming** at the **American University of Beirut (AUB)**.
 
-Connect-4 is a two-player strategy game played on a 6×7 grid. Players alternate turns dropping their discs into columns, and the first to connect four discs in a row (horizontally, vertically, or diagonally) wins the game. If the grid fills completely without a winner, the game ends in a draw.
+Players alternate turns dropping discs into a 6×7 grid. First to connect four in a row — horizontal, vertical, or diagonal — wins. If the board fills without a winner, the game ends in a draw.
 
-⸻
+---
 
-📊 Project Goals
-	•	Practice C programming in a structured, modular way.
-	•	Apply systems programming concepts: memory safety, debugging, and clean builds.
-	•	Maintain a professional GitHub repository with commits, documentation, and organized structure.
-	•	Provide a foundation for future extensions such as AI opponents, complexity analysis, and performance improvements.
+## Features
 
-⸻
+- Two-player turn-based gameplay in the terminal
+- Full win detection (horizontal, vertical, both diagonals)
+- Draw detection when the board fills
+- Clean modular codebase — board logic, game flow, and entry point separated
+- Automated setup via `setup_autostart.sh`
 
-👥 Authors
+---
 
-Developed collaboratively by our team for CMPS 241 — Systems Programming.
-This work represents our learning and understanding of C, system tools, and structured project development.
+## Project Structure
+
+```
+Connect-Four/
+├── src/
+│   ├── main.c        # Entry point
+│   ├── board.c / .h  # Board state, rendering, column operations
+│   └── game.c / .h   # Turn management, win/draw detection
+├── tests/            # Test suite
+├── docs/             # Project documentation
+├── Makefile
+└── setup_autostart.sh
+```
+
+---
+
+## Build & Run
+
+**Requirements:** GCC, GNU Make
+
+```bash
+git clone https://github.com/Joeehabre/Connect-Four.git
+cd Connect-Four
+make
+./connect4
+```
+
+```bash
+make clean   # remove build artifacts
+```
+
+---
+
+## What I Learned
+
+- Structured C project layout — separating board state, game logic, and I/O into modules
+- Makefile dependency tracking and incremental builds
+- Memory safety, clean compilation with `-Wall -Wextra`, and systematic debugging
+- Collaborative development workflow with Git (branching, commits, reviews)
+
+---
+
+## Authors
+
+Developed as a team project for **CMPS 241 – Systems Programming, AUB**.
