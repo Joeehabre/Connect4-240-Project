@@ -18,15 +18,27 @@ Players alternate turns dropping discs into a 6×7 grid. First to connect four i
 
 ## My Contributions
 
-My main work on this project:
+I wrote most of the game logic — roughly 96% of `game.c`, including the whole computer opponent.
 
-- **Computer opponent** — implemented bot gameplay with selectable difficulty levels
-- **Multithreaded hard mode** — the hardest difficulty searches moves across threads for a stronger opponent
-- **Game flow** — game-mode and difficulty selection, plus the surrounding turn logic in `game.c` / `game.h`
-- **Build & tooling** — Makefile, `.gitignore`, and the CI build workflow
+- **Computer opponent** — three difficulty levels: *easy* (random valid move), *medium* (win if possible, else block, else prefer the centre), and *hard*
+- **Parallel minimax** — the hard bot evaluates every column concurrently, spawning one `pthread` per column and joining the results to pick the best move
+- **Game flow** — mode and difficulty selection plus the turn logic in `game.c` / `game.h`
+- **Build & tooling** — Makefile (with `-pthread`), `.gitignore`, and the CI build workflow
 - **Documentation** — repository README, MIT license, and the sprint reports
 
-Authorship for every commit is visible in the project history.
+`board.c` (board state and rendering) was written by my teammate. Authorship for every commit is visible in the project history.
+
+---
+
+## Screenshots
+
+**Mode and difficulty selection** — building with `-Wall -Wextra -Wpedantic`, then choosing an opponent:
+
+![Difficulty selection](tests/Choose%20Bot%20Difficulty%20-%20Alpine.png)
+
+**Playing against the hard bot:**
+
+![Hard bot demo](tests/Hard%20Difficulty%20Bot%20Demo.png)
 
 ---
 
