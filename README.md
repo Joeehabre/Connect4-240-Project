@@ -16,6 +16,20 @@ Players alternate turns dropping discs into a 6×7 grid. First to connect four i
 
 ---
 
+## My Contributions
+
+My main work on this project:
+
+- **Computer opponent** — implemented bot gameplay with selectable difficulty levels
+- **Multithreaded hard mode** — the hardest difficulty searches moves across threads for a stronger opponent
+- **Game flow** — game-mode and difficulty selection, plus the surrounding turn logic in `game.c` / `game.h`
+- **Build & tooling** — Makefile, `.gitignore`, and the CI build workflow
+- **Documentation** — repository README, MIT license, and the sprint reports
+
+Authorship for every commit is visible in the project history.
+
+---
+
 ## Features
 
 - Two-player turn-based gameplay in the terminal
